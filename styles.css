@@ -1,4 +1,4 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Taylor Fields  */
 
 /* IMPORTED FONTS*/
 /* IMPORT "INTER" FROM GOOGLE FONTS"
@@ -62,19 +62,67 @@ table {
     --font: "Inter", sans-serif;
 }
 
-/* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
+
+/* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+body{
+    background-color: var(--blue);
+     min-width: 400px;
+     margin: 0;
+     padding: 0;
+}
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
+/************** HEADER *****************/
+header{
+    background-color: var(--black);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin-bottom: 6px;
+    
+}
+header h1{
+    color:var(--blue);
+    font-size: 1.5em;
+    font-family: var(--font);
+    padding-left: 10px;  
+    font-weight: bold;
+}
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+ header h1::before {
+    content: "";
+    display: inline-block;
+    left:-.5rem;
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-right: 0.5rem; 
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    vertical-align: middle;
 
+}
+/************** NAV ********************/
+.menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--white);
+    padding-right: 20px;
+}
+.nav {
+  display: none;
+}
+
+/************** HERO *******************/
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+.hero {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -82,18 +130,212 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    padding-bottom: 10px;
+}
+.hero h2,
+.hero p,
+.hero button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    text-align: center;
+}
+.hero h2 {
+    top: 43%;
+    font-size: 21px;
+    font-family: var(--font);
+    font-weight: bold;
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+.hero p {
+    top: 50%;
+    width: 80%;
+    max-width: 700px;
+    font-size: 16px;
+    font-family: var(--font);
+}
+.hero button {
+    top: 60%;
+    background: var(--blue);
+    color: var(--white);
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight:bold;
+}
+/*************** MAIN *******************/
+main{
+    background-color: var(--white);
+    padding-top: 30px;    
+}
+ main h2{
+    font-size: 1.2em;
+    font-family: var(--font);
+    font-weight: bold;
+    margin-left: 30px;
+    color: var(--black);
+ }
+.our h2{
+  font-size: 1.5em;
+ }
+.our p{
+  padding: 20px;
+  font-family: var(--font);
+}
+/************* Sections **************/
+.offer{
+    padding-bottom: 50px;
+}
+.offer h2{
+   font-size: 1.5em;
+   padding-top: 20px; 
+}
+section{
+    background-color: var(--blue);
+    padding: 30px;
+    margin: 20px;
+    border-radius: 8px;
+    line-height: 1.4em;
+    
+}
+section h3{
+  font-family: var(--font);
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--white);
+  padding: 20px;
+  padding-top:10px;
+}
+section p{
+    font-family: var(--font);
+    color: var(--white);
 
 }
+/********** RESULTS *************/
+ 
+.results{
+   padding-bottom: 20px;
+  
+}
+.results h2{
+  padding-top: 20px;
+  font-size: 1.5em;
+  font-family: var(--font);
+  font-weight: bold;
+  margin-left: 30px;
+  color: var(--white);
+}
+.results p{
+  padding: 20px;
+  font-family: var(--font);
+  color: var(--white);
+}
+.results h3{
+  font-size: 1.5em;
+  font-family: var(--font);
+  font-weight: bold;
+  margin-left: 30px;
+  color: var(--white);
+}
+table{
+  width: 90%;  
+  max-width: 800px;
+  margin: 40px auto;        
+  padding: 30px;
+  border: 2px solid var(--charcoal);
+  border-collapse: collapse;
+  background-color: var(--black);
+ 
+}
+table th, td{
+ padding: 0.5em;
+ border: 1px solid var(--charcoal);
+ font-family: var(--font);
+ color: var(--white);
+ padding: 20px;
+}
+th{
+  font-weight: bold;
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 16px;
+}
+td{
+     text-align: center;
+     color: var(--white);
+     vertical-align: middle;
+     line-height: 1.2em;
+     font-weight: bold;
+     font-size: 16px;
+}
+tr:nth-of-type(odd) {
+  background-color: var(--charcoal);
+}
+
+/************ CONTACT ***************/
+.contact{
+    background-color: var(--black);
+    padding-bottom: 20px;
+}
+.contact h2{
+  padding-top: 20px;
+  font-size: 1.5em;
+  font-family: var(--font);
+  font-weight: bold;
+  margin-left: 50px;
+  color: var(--white);
+}
+.contact p{
+  text-align: left;
+  padding: 40px;
+  padding-bottom:10px;
+  font-family: var(--font);
+  color: var(--white);
+}
+.field {
+  width:100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+.field label {
+  text-align: left;
+  font-weight: bold;
+  color: var(--white);
+  margin-bottom: 5px;
+  font-family: var(--font);
+}
+.field input,
+.field textarea {
+  width: 100%;
+  border: 3px solid var(--blue)
+}
+
+.field input{
+    height: 40px;
+}
+.field textarea{
+  height: 80px;
+}
+#button{
+  width: 100%;
+  max-width: 420px;
+  padding: 12px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px auto 0;
+  display: block;
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -108,12 +350,15 @@ table {
     position: relative;
 }
 /* ADD ON TRANSITION ON HEIGHT */
+/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
+
 .bar {
     width: 50px;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 0.3s ease-in-out;
+    animation: stepUp 1s ease-in-out forwards;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -135,27 +380,197 @@ table {
         height: var(--height);
     }
 }
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
-    animation: stepUp 1s ease-in-out forwards;
+
+/*********** FOOTER *************/
+footer{
+    background-color: var(--black);
+    color:var(--white);
+    text-align: center;
+    padding-bottom: 20px;
+}
+footer a{
+    color: var(--blue);
 }
 
 
-/* MEDIA QUERIES (MEDIUM) */ 
 
-    #results {
-        grid-template-columns: 1fr 1fr;
+/******************* MEDIA QUERIES (MEDIUM) ***********************/ 
+@media (min-width: 800px) {
+    .body{
+     max-width: 800px;
     }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
+    .menu-icon {
+     display: none;
+   }
+
+    nav ul {
+     display: flex !important;   
+     flex-direction: row;       
+     list-style: none;
+     padding: 0;
+     margin: 0;
+     margin-right: 30px;
+     gap: 30px;
+     justify-content: center;                  
+   }
+   nav li a {
+    text-decoration: none;       
+    color: var(--blue);  
+    font-family: var(--font); 
+    font-size: 1.2em;              
+    font-weight: bold;
+    padding: 8px 12px;           
+    transition: color 0.2s;
+}
+
+    .offer{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     column-gap: 16px;                  
     }
-    .results-table {
-        width: 50%;
+    .offer h2 {
+    grid-column: 1 / -1;  
+    font-size: 1.5em;
+    margin-bottom: 10px;
     }
-    .bar-chart {
-        width: 50%;
+    section h3{
+        font-size: 1.2em;
+    }
+    .offer section {
+        justify-self: center;
+        padding: 20px;
+        width: 100%; 
+        box-sizing: border-box; 
+        line-height: 1.4em;
     }
 
+   .results-container{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr; 
+     max-width: 800px;   
+     gap: 50px; 
+     padding: 20px;
+     margin: 30px auto 0 auto;
+   }
+    #bar-chart {
+     grid-column: 3 / 5;     
+     justify-self: start;     
+     padding-left: 20px;       
+     margin-top: 60px;        
+     max-width: 300px;        
+     width: 100%;
+   }
+.field{
+    margin-left: 20px;
+}
+.field input,
+.field textarea {
+  width: 700px;
+  border: 3px solid var(--blue)
+}
+.field input{ 
+    height: 40px;
+}
+.field textarea{
+  height: 100px;
+}
+#button{
+  width: 700px;
+  max-width: 750px;
+  padding: 12px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px auto 0;
+  display: block;
+}
+}
 
 /* MEDIA QUERIES (LARGE) */
+@media (min-width: 1024px) {
+
+.hero{
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
+    height: 40vh;
+}
+.hero h2 {
+    top: 26%;
+}
+.hero button {
+    top: 34%;
+}
+.hero p {
+    top: 30%;
+    width: 80%;
+    max-width: 700px;
+    font-size: 16px;
+    font-family: var(--font);
+}
+
+.offer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.offer section{
+   line-height: 1.4em;
+}
+.results-container{
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr; 
+     max-width: 1024px;   
+     gap: 100px; 
+     padding: 20px;
+     margin: 30px auto 0 auto;
+   }
+    #bar-chart {
+     grid-column: 3 / 5;     
+     justify-self: start;     
+     padding-left: 20px;       
+     margin-top: 60px;        
+     max-width: 300px;        
+     width: 100%;
+   }
+   table{
+    width: 400px;
+   }
+   #bar-chart{
+    gap: 30px;
+   }
+
+form {
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content: center;
+    
+}
+.field {
+  display: flex;
+  flex-direction: column; 
+  flex: 1 1 45%;          
+  min-width: 200px; 
+  max-width: 2000px;
+  
+  
+}
+.field input{
+    width: 400px;
+
+}
+
+.field textarea {
+  resize: vertical;  
+  width: 400px;   
+}
+
+.field #button {
+     display: flex; 
+     width: 400px;
+     height: 50px;
+    
+}
+
+}
