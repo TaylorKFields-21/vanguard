@@ -506,15 +506,15 @@ footer a{
     height: 80vh;
 }
 .hero h2 {
-    top: 42%;
+    top: 44%;
 }
 .hero button {
-    top: 54%;
+    top: 57%;
 }
 .hero p {
-    top: 47%;
+    top: 50%;
     width: 80%;
-    max-width: 700px;
+    max-width: 750px;
     font-size: 16px;
     font-family: var(--font);
 }
