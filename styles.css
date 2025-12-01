@@ -74,6 +74,32 @@ body{
      margin: 0;
      padding: 0;
 }
+.hero h2,.hero button{
+ opacity: 0;
+ transform: translateY(-20px);
+ animation: topFadeIn 1.6s ease forwards;
+}
+.container h2, h3, .contact h2{
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: topFadeIn 1.6s ease forwards;
+}
+.container p, .contact p, .hero p{
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: topFadeIn 0.29s ease forwards;
+}
+@keyframes topFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
     width: 90%;
@@ -90,12 +116,15 @@ header{
     margin-bottom: 6px;
     
 }
-header h1{
+header h1{   
+    display: flex; 
     color:var(--blue);
     font-size: 1.5em;
     font-family: var(--font);
     padding-left: 10px;  
     font-weight: bold;
+    padding: 10px;
+  
 }
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
  header h1::before {
@@ -106,19 +135,67 @@ header h1{
     height: 3.75rem;
     margin-right: 0.5rem; 
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-    vertical-align: middle;
-
+    flex-shrink: 0;
+    animation: floatLogo 2s ease-in-out infinite;
 }
+@keyframes floatLogo {
+    0%, 100% {
+        transform: translateY(0);   
+    }
+    50% {
+        transform: translateY(-10px); 
+    }
+}
+
 /************** NAV ********************/
 .menu-icon {
-    font-size: 30px;
+    font-size: 40px;
     cursor: pointer;
     color: var(--white);
     padding-right: 20px;
 }
-.nav {
-  display: none;
+nav:hover .menu-icon {
+  transform: scale(0.8);
+  pointer-events: none;
+  padding-bottom: 50px;
 }
+.nav {
+  list-style: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  padding: 10px 0px;
+  opacity: 0;
+  transform: translateY(-10px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.35s ease,transform 0.35s ease;
+  background-color: var(--black);
+}
+nav:hover .nav {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.nav a{
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--blue);
+  font-family: var(--font);
+  font-size: 1.5em;
+}
+.nav li {
+  padding: 10px 20px;
+  transition: 0.5s ease;
+}
+.nav a:hover{
+  color: var(--black);
+  transition: 0.1s ease;
+  cursor: pointer;
+}
+.nav li:hover {
+  background: var(--blue);
+}
+
 
 /************** HERO *******************/
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
@@ -130,33 +207,38 @@ header h1{
     text-align: center;
     padding: 1rem;
     overflow: hidden;
-    padding-bottom: 10px;
+    padding-bottom: 10px; 
 }
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;              
+}
+
 .hero h2,
 .hero p,
 .hero button {
-    position: absolute;
+    opacity: 0;
     left: 50%;
-    transform: translateX(-50%);
     color: var(--white);
     text-align: center;
+    margin: 0.5rem 0;
 }
 .hero h2 {
-    top: 43%;
     font-size: 21px;
     font-family: var(--font);
     font-weight: bold;
 }
 
 .hero p {
-    top: 50%;
     width: 80%;
     max-width: 700px;
     font-size: 16px;
     font-family: var(--font);
 }
 .hero button {
-    top: 60%;
     background: var(--blue);
     color: var(--white);
     padding: 12px 14px;
@@ -165,6 +247,15 @@ header h1{
     font-size: 16px;
     cursor: pointer;
     font-weight:bold;
+    transition: transform 0.5s ease, 0.5s ease;
+}
+.hero button:hover{
+   transform: scale(1.1); 
+   background-color: var(--red);
+    
+  
+ 
+
 }
 /*************** MAIN *******************/
 main{
@@ -198,8 +289,11 @@ section{
     padding: 30px;
     margin: 20px;
     border-radius: 8px;
-    line-height: 1.4em;
-    
+    line-height: 1.4em; 
+    transition: transform 0.3s ease;
+}
+section:hover {
+  transform: translateY(-10px);
 }
 section h3{
   font-family: var(--font);
@@ -296,15 +390,15 @@ tr:nth-of-type(odd) {
   color: var(--white);
 }
 .field {
-  width:100%;
-  max-width: 420px;
+  display: flex;
+  width:90%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   padding: 20px 0;
   margin: 0 auto;
 }
 .field label {
-  margin-left: 25px;
   font-weight: bold;
   color: var(--white);
   margin-bottom: 5px;
@@ -312,14 +406,19 @@ tr:nth-of-type(odd) {
 }
 .field input,
 .field textarea {
+  display: flex;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
   margin: 0 auto;
-  border: 3px solid var(--blue)
+  border: 3px solid var(--blue);
+  padding: 8px;
+  box-sizing: border-box; 
+  transition: transform 0.4s ease, 0.4s ease;
 }
 
 .field input{
     height: 40px;
+    
 }
 .field textarea{
   height: 80px;
@@ -336,7 +435,15 @@ tr:nth-of-type(odd) {
   font-weight: bold;
   margin: 10px auto 0;
   display: block;
+  box-sizing: border-box;
+  transition: transform 0.5s ease, 0.5s ease;
 }
+
+#button:hover{
+  transform: scale(1.1);
+  background-color: var(--red); 
+}
+
 
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -405,16 +512,20 @@ footer a{
      display: none;
    }
 
-    nav ul {
-     display: flex !important;   
-     flex-direction: row;       
-     list-style: none;
-     padding: 0;
-     margin: 0;
-     margin-right: 30px;
-     gap: 30px;
-     justify-content: center;                  
-   }
+   .nav {
+    position: static;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+
+    display: flex !important;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: none;
+  }
+
    nav li a {
     text-decoration: none;       
     color: var(--blue);  
@@ -554,19 +665,20 @@ form {
     gap:20px;
     flex-wrap:wrap;
     justify-content: center;
+    max-width: 1024px;
+    margin: 0 auto;
+
     
 }
 .field {
   display: flex;
   flex-direction: column; 
-  flex: 1 1 45%;          
-  min-width: 200px; 
-  max-width: 2000px;
-  
-  
+  width: 400px;           
+  max-width: 100%;
+   margin: 0 auto;   
 }
 .field label{
-  margin-left: 60px;
+   width: 100%;   
 }
 .field input{
     width: 400px;
@@ -580,8 +692,8 @@ form {
 
 .field #button {
      display: flex; 
-     width: 350px;
-     height: 50px;
+     width: 400px;
+     height: 40px;
      margin-right: 70px;
     
 }
