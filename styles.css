@@ -1,4 +1,4 @@
-/* CSS BY Taylor Fields  */
+/* CSS BY Taylor K Fields  */
 
 /* IMPORTED FONTS*/
 
@@ -150,7 +150,6 @@ header h1{
         transform: translateY(-10px); 
     }
 }
-
 /************** NAV ********************/
 .menu-icon {
     font-size: 40px;
@@ -255,10 +254,6 @@ nav:hover .nav {
 .hero button:hover{
    transform: scale(1.1); 
    background-color: var(--red);
-    
-  
- 
-
 }
 /*************** MAIN *******************/
 main{
@@ -534,6 +529,7 @@ footer a{
     font-weight: bold;
     padding: 8px 12px;           
     transition: color 0.2s;
+
 }
 
     .offer{
